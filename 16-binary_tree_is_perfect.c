@@ -85,6 +85,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	yes = binary_tree_zero_two_node(tree);
 	same = binary_tree_same_height(tree);
 
-	printf("%ld   %ld\n", yes, same);
 	return (yes && same ? 1 : 0);
 }
