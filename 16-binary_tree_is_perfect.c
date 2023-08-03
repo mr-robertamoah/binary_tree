@@ -77,7 +77,7 @@ size_t binary_tree_zero_two_node(const binary_tree_t *tree)
 */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	size_t yes = 0, same = 0;
+	size_t right = 1, left = 1, yes = 0, same = 0;
 
 	if (tree == NULL)
 		return (0);
@@ -85,5 +85,10 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	yes = binary_tree_zero_two_node(tree);
 	same = binary_tree_same_height(tree);
 
-	return (yes && same ? 1 : 0);
+	if (tree->right)
+		right = binary_tree_is_perfect(tree->right);
+	if (tree->left)
+	left = binary_tree_is_perfect(tree->left);
+
+	return (yes && same && left && right ? 1 : 0);
 }
