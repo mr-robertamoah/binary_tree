@@ -18,7 +18,7 @@ binary_tree_t *binary_trees_ancestor(
 
 	while (first)
 	{
-		tmp = (binary_tree_t *) second->parent;
+		tmp = (binary_tree_t *) second;
 		while (tmp)
 		{
 			if (first == tmp)
